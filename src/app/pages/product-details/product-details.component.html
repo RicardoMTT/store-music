@@ -1,0 +1,20 @@
+<div class="product-details">
+  <div class="product-details__container">
+    <div class="product-details__container__left">
+      <div class="product-details__container__left__background-img">
+        <img
+          [src]="'http://localhost:3001' + (product$ | async).imagen.url"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div class="product-details__container__right">
+      <h1>Producto: {{ (product$ | async).nombre }}</h1>
+      <span>Precio: $/. {{ (product$ | async).precio }}</span>
+      <p><strong>Descripcion: </strong>{{ (product$ | async).descripcion }}</p>
+      <!--PAGO PAYPAL-->
+      <div #paypal></div>
+    </div>
+  </div>
+</div>

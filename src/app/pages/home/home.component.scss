@@ -1,0 +1,61 @@
+.example-card {
+  //margin: 10px;
+  /*
+  all:Todas las propiedades que puedan tener una transición animada la tendrán.
+
+  */
+  transition: all 0.5s ease-out;
+  margin: 10px 0 0 0;
+  @media only screen and (max-width: 600px) {
+    width: 100% !important;
+  }
+}
+.example-card:hover {
+  transform: scale(1.1);
+}
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+.container-chips {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+.container {
+  &__cards {
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.mat-card {
+  height: 660px !important;
+  width: 30%;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+// @keyframes crescendo {
+//   0% {
+//     transform: scale(1);
+//   }
+//   100% {
+//     transform: scale(1.2);
+//   }
+// }
+
+.isSelected {
+  background: chartreuse !important;
+}
+
+.isNotSelected {
+  background: chocolate !important;
+}

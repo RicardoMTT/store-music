@@ -1,0 +1,28 @@
+.product-details {
+  &__container {
+    margin-top: 60px;
+
+    display: flex;
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      padding: 0 30px;
+    }
+    &__left,
+    &__right {
+      @media only screen and (max-width: 600px) {
+        width: 100% !important;
+      }
+    }
+    &__left {
+      &__background-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      img {
+        width: 50%;
+      }
+    }
+  }
+}

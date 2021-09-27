@@ -1,0 +1,21 @@
+<p>
+  <mat-toolbar>
+    <span (click)="redirectHome()" style="cursor: pointer">Store Music</span>
+    <span class="example-spacer"></span>
+
+    <ng-container *ngIf="authTokenObs | async">
+      <button mat-icon-button class="example-icon" (click)="closeSession()">
+        Cerrar Sesión
+      </button>
+    </ng-container>
+    <ng-container
+      *ngIf="
+        (authTokenObs | async) == null || (authTokenObs | async) == undefined
+      "
+    >
+      <button mat-icon-button class="example-icon" (click)="showLoginPage()">
+        Login
+      </button>
+    </ng-container>
+  </mat-toolbar>
+</p>
