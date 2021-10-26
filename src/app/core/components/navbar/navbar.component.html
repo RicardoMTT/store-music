@@ -2,6 +2,11 @@
   <mat-toolbar>
     <span (click)="redirectHome()" style="cursor: pointer">Store Music</span>
     <span class="example-spacer"></span>
+    <img
+      src="assets/supermercado.svg"
+      style="background: dimgrey; margin-right: 10px; cursor: pointer"
+      alt="carrito"
+    />
 
     <ng-container *ngIf="authTokenObs | async">
       <button mat-icon-button class="example-icon" (click)="closeSession()">

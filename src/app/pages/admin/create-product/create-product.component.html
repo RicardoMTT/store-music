@@ -1,0 +1,92 @@
+<div class="create-product">
+  <div class="create-product__container" [formGroup]="diskForm">
+    <div class="create-product__container__left">
+      <img
+        *ngIf="filePath == null || filePath == ''"
+        src="https://i.insider.com/5484d9d1eab8ea3017b17e29?width=600&format=jpeg&auto=webp"
+        alt=""
+      />
+      <label for="upload">
+        <span
+          *ngIf="filePath == null || filePath == ''"
+          class="glyphicon glyphicon-folder-open"
+          aria-hidden="true"
+          >Selecciona una imagen</span
+        >
+
+        <input
+          type="file"
+          accept="image/*"
+          style="display: none; position: absolute; top: 335px; left: 185px"
+          id="upload"
+          (change)="imagePreview($event)"
+        />
+      </label>
+
+      <div *ngIf="filePath && filePath !== ''">
+        <img [src]="filePath" [alt]="diskForm.value.name" />
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="create-product__container__right">
+      <!-- <input formControlName="filename" placeholder="File name" /> -->
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            placeholder="nombre"
+            required
+            formControlName="name"
+          />
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Precio</mat-label>
+          <input
+            matInput
+            placeholder="precio"
+            required
+            formControlName="price"
+          />
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Descripción</mat-label>
+          <input
+            matInput
+            placeholder="descripcion"
+            required
+            formControlName="description"
+          />
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <ng-select
+          formControlName="category"
+          [items]="categories$ | async"
+          bindLabel="nombre"
+          bindValue="id"
+          [(ngModel)]="selectedCategory"
+        >
+        </ng-select>
+      </div>
+
+      <div class="example-container">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="diskForm.invalid"
+          (click)="createDisk()"
+        >
+          Crear Disco
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

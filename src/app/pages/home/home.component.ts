@@ -40,4 +40,5 @@ export class HomeComponent implements OnInit {
   seeDetails(productId) {
     this.router.navigate(['/product-details', productId]);
   }
+  addToCart(productId) {}
 }
